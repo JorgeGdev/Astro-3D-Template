@@ -1,6 +1,6 @@
 # Astro 3D Portfolio Template 🎨🚀
 
-![3D Portfolio Preview](./assets/main.png)
+![3D Portfolio Preview](https://github.com/JorgeGdev/Astro-3D-Template/blob/main/public/assets/main.png?raw=true)
 
 An Astro-based portfolio template for web developers who want to showcase their skills with a **3D design twist**. This template focuses on creating visually stunning 3D experiences while maintaining a performant and responsive web interface.
 
