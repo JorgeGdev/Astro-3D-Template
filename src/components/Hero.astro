@@ -1,0 +1,40 @@
+---
+const { subtitle } = Astro.props;
+---
+
+<div class="hero stack gap-4">
+  <!-- Renderiza primero el contenido del slot (el modelo 3D) -->
+  <slot />
+
+  <!-- Subtítulo debajo del modelo -->
+  <p class="subtitle">{subtitle}</p>
+
+  <!-- Pills debajo del subtítulo -->
+  <div class="roles">
+    <slot name="pills" />
+  </div>
+</div>
+
+<style>
+  .hero {
+    font-size: var(--text-lg);
+    text-align: center;
+  }
+
+  .subtitle {
+    max-width: 37ch;
+    margin-inline: auto;
+  }
+
+  .roles {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (min-width: 50em) {
+    .hero {
+      font-size: var(--text-xl);
+    }
+  }
+</style>

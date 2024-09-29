@@ -1,0 +1,122 @@
+---
+import SuperIcon from './SuperIcon';
+---
+
+<section class="box skills">
+  <div class="stack gap-2 lg:gap-4 skill-item">
+    <div class="superIcon">
+      <SuperIcon client:visible />
+    </div>
+    <h2>Creativity</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+  </div>
+  <div class="stack gap-2 lg:gap-4 skill-item">
+    <div class="superIcon">
+      <SuperIcon client:visible />
+    </div>
+    <h2>Collaboration</h2>
+    <p>Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.</p>
+  </div>
+  <div class="stack gap-2 lg:gap-4 skill-item">
+    <div class="superIcon">
+      <SuperIcon client:visible />
+    </div>
+    <h2>Adaptability</h2>
+    <p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+  </div>
+</section>
+
+<style>
+  
+  .box {
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+    perspective: 1000px; 
+  }
+
+  
+  .skill-item {
+    background-color: var(--gray-900);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    transition: transform 0.5s ease; 
+    transform-style: preserve-3d;
+    transform-origin: center; 
+    cursor: pointer;
+  }
+
+  .skill-item:hover {
+    transform: rotateY(180deg); 
+  }
+
+  
+  .skill-item h2,
+  .skill-item p {
+    transition: opacity 0.3s ease;
+  }
+
+  .superIcon{
+    height: 60px;
+    width: 60px;
+  }
+
+  .skill-item:hover h2,
+  .skill-item:hover p {
+    opacity: 0; 
+  }
+
+  .skill-item {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+ 
+  .skill-item:hover::after {
+    content: "John Doe -  SKILLS"; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg); 
+    font-size: 1.2rem;
+    color: var(--accent-regular);
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  
+  @media (min-width: 50em) {
+    .box {
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+    }
+
+    .skills h2 {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  @media (max-width: 50em) {
+    .skills h2 {
+      font-size: var(--text-xl);
+    }
+
+  }
+
+</style>
